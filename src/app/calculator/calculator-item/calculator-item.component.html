@@ -1,0 +1,74 @@
+<div class="p-2 d-flex">
+  <div class="col col-sm-2 text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[0]}}</h6>
+    </div>
+    <h4>{{name}}</h4>
+  </div>
+  <div class="col text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[1]}}</h6>
+    </div>
+    <form [formGroup]="calculatorFormGroup">
+      <input
+        type="number"
+        class="ability-score"
+        min="8"
+        max="15"
+        [defaultValue]="attributeValue"
+        formControlName="attributeValue"
+        (change)="onAttributeValueChange()"
+      >
+    </form>
+
+  </div>
+  <div class="col text-center col-sm-1">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[2]}}</h6>
+    </div>
+    <h4>
+      +
+    </h4>
+  </div>
+  <div class="col text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[3]}}</h6>
+    </div>
+    <h4>
+      {{racialBonus}}
+    </h4>
+  </div>
+  <div class="col text-center col-sm-1">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[4]}}</h6>
+    </div>
+    <h4>
+      =
+    </h4>
+  </div>
+  <div class="col text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[5]}}</h6>
+    </div>
+    <h4>
+      {{summaryAttributeValue}}
+    </h4>
+  </div>
+  <div class="col text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[6]}}</h6>
+    </div>
+    <h4 class="font-weight-bold">
+      {{modifier}}
+    </h4>
+  </div>
+  <div class="col text-center">
+    <div *ngIf="addHeader" class="header">
+      <h6>{{headers[7]}}</h6>
+    </div>
+    <h4>
+      {{cost}}
+    </h4>
+  </div>
+</div>
+

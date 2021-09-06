@@ -1,0 +1,37 @@
+<hr>
+
+<div class="col">
+  <div class="row">
+    <div class="col">
+      <h2>{{name}}</h2>
+      <h3>{{race.race.name}}, {{clazz.clazz.name}}, {{origin.origin.name}}</h3>
+      <h4>Poziom: {{level}}</h4>
+      <p>Kość wytrzymałości: {{clazz.clazz.hitDice}}</p>
+      <p>Punkty życia na 1 poziomie: {{clazz.clazz.healthPoints}}</p>
+      <p>Punkty życia na wyższych poziomach: {{clazz.clazz.healthPointsOnHigherLevels}}</p>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-primary" (click)="onDelete(id)" *ngIf="loggedIn">Usuń</button>
+    </div>
+  </div>
+  <div class="col mt-4">
+    <h3>Biegłości:</h3>
+    <ul class="list-group mt-4">
+      <li *ngFor="let proficiency of origin.proficiencies" class="list-group-item d-flex ">
+        <h4 class="col">{{proficiency.name}}</h4>
+      </li>
+      <li *ngFor="let proficiency of clazz.proficiencies" class="list-group-item d-flex ">
+        <h4 class="col">{{proficiency.name}}</h4>
+      </li>
+    </ul>
+  </div>
+  <div class="col mt-4">
+    <h3>Umiejętności i zdolności:</h3>
+    <ul class="list-group mt-4">
+      <li *ngFor="let feature of race.raceFeatures" class="list-group-item d-flex flex-column">
+        <h4 class="col">{{feature.name}}</h4>
+        <p class="col">{{feature.description}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

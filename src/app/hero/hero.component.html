@@ -1,0 +1,54 @@
+<div class="row" *ngIf="loggedIn">
+  <div class="col">
+    <h2>Dodaj bohatera</h2>
+    <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="originName" class="form-label">Nazwa</label>
+        <input
+          type="text"
+          id="originName"
+          formControlName="name"
+          class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="raceId" class="form-label">Rasa</label>
+        <select id="raceId" class="form-control" formControlName="raceId">
+          <option *ngFor="let race of races; let i = index" [ngValue]="race.race.id">{{race.race.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="classId" class="form-label">Klasa</label>
+        <select id="classId" class="form-control" formControlName="classId">
+          <option *ngFor="let clazz of classes" [ngValue]="clazz.clazz.id">{{clazz.clazz.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="originId" class="form-label">Pochodzenie</label>
+        <select id="originId" class="form-control" formControlName="originId">
+          <option *ngFor="let origin of origins" [ngValue]="origin.origin.id">{{origin.origin.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!heroForm.valid">Dodaj
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-hero-item
+      *ngFor="let hero of heroes"
+      [id]="hero.id"
+      [name]="hero.name"
+      [level]="hero.level"
+      [race]="hero.race"
+      [clazz]="hero.clazz"
+      [origin]="hero.origin"
+      (stateChanged)="onDelete($event)"
+    ></app-hero-item>
+  </div>
+</div>

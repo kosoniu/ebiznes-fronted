@@ -1,0 +1,88 @@
+<div class="row" *ngIf="loggedIn">
+  <div class="col">
+    <h2>Dodaj biegłość</h2>
+    <form [formGroup]="proficiencyForm" (ngSubmit)="onProficiencySubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="proficiencyType" class="form-label">Typ biegłości</label>
+        <select id="proficiencyType" class="form-control" formControlName="proficiencyType">
+          <option [ngValue]="0">Rzut Obronny</option>
+          <option [ngValue]="1">Umiejętność</option>
+          <option [ngValue]="2">Język</option>
+          <option [ngValue]="3">Narzędzia</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!proficiencyForm.valid">Dodaj
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <h2>Rzuty obronne</h2>
+    <ul class="list-group">
+      <app-proficiency-item
+      *ngFor="let proficiency of proficiencies | proficiencyFilter:{proficiencyType: 0}"
+      [id]="proficiency.id"
+      [name]="proficiency.name"
+      [proficiencyType]="proficiency.proficiencyType"
+      (stateChanged)="onDeleteProficiency($event)"
+      >
+      </app-proficiency-item>
+    </ul>
+  </div>
+  <div class="col">
+    <h2>Umiejętności</h2>
+    <ul class="list-group">
+      <app-proficiency-item
+        *ngFor="let proficiency of proficiencies | proficiencyFilter:{proficiencyType: 1}"
+        [id]="proficiency.id"
+        [name]="proficiency.name"
+        [proficiencyType]="proficiency.proficiencyType"
+        (stateChanged)="onDeleteProficiency($event)"
+      >
+      </app-proficiency-item>
+    </ul>
+  </div>
+  <div class="col">
+    <h2>Języki</h2>
+    <ul class="list-group">
+      <app-proficiency-item
+        *ngFor="let proficiency of proficiencies | proficiencyFilter:{proficiencyType: 2}"
+        [id]="proficiency.id"
+        [name]="proficiency.name"
+        [proficiencyType]="proficiency.proficiencyType"
+        (stateChanged)="onDeleteProficiency($event)"
+      >
+      </app-proficiency-item>
+    </ul>
+  </div>
+  <div class="col">
+    <h2>Narzędzia</h2>
+    <ul class="list-group">
+      <app-proficiency-item
+        *ngFor="let proficiency of proficiencies | proficiencyFilter:{proficiencyType: 3}"
+        [id]="proficiency.id"
+        [name]="proficiency.name"
+        [proficiencyType]="proficiency.proficiencyType"
+        (stateChanged)="onDeleteProficiency($event)"
+      >
+      </app-proficiency-item>
+    </ul>
+  </div>
+</div>

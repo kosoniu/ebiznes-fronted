@@ -1,0 +1,16 @@
+.ability-score::-webkit-inner-spin-button,
+.ability-score::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.ability-score {
+  width: 3rem;
+}
+
+.header {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

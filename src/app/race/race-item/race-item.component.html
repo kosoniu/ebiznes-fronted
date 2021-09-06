@@ -1,0 +1,19 @@
+<hr>
+
+<div class="col">
+  <div class="row">
+    <div class="col">
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      <ul class="list-group">
+        <li *ngFor="let feature of raceFeatures" class="list-group-item">
+          <h3>{{feature.name}}</h3>
+          <p>{{feature.description}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-primary" (click)="onDelete(id)" *ngIf="loggedIn">Usuń</button>
+    </div>
+  </div>
+</div>

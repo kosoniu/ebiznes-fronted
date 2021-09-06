@@ -1,0 +1,6 @@
+<button *ngIf="!loggedIn" (click)="login()" mat-raised-button class="btn btn-primary btn-outline-light">
+  Zaloguj
+</button>
+<button *ngIf="loggedIn" (click)="logout()" mat-raised-button class="btn btn-primary btn-danger">
+  Wyloguj
+</button>

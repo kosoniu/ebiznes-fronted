@@ -1,0 +1,23 @@
+<hr>
+
+<div class="col">
+  <div class="row">
+    <div class="col">
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      <p>Kość wytrzymałości: <b>k{{hitDice}}</b></p>
+      <p>Punkty życia na 1 poziomie: <b>{{healthPoints}}</b> lub <b>k{{hitDice}}</b></p>
+      <p>Punkty zycia na wyższych poziomiach: <b>{{healthPointsOnHigherLevels}}</b> lub <b>k{{hitDice}}</b> + modyfikator z Kondycji za każdy poziom powyżej pierwszego</p>
+      <h3>Biegłości:</h3>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-primary" (click)="onDelete(id)" *ngIf="loggedIn">Usuń</button>
+    </div>
+  </div>
+  <ul class="list-group mt-4">
+    <li *ngFor="let proficiency of proficiencies" class="list-group-item d-flex ">
+      <h4 class="col">{{proficiency.name}}</h4>
+      <p class="col">{{proficiencyTypeToString(proficiency.proficiencyType)}}</p>
+    </li>
+  </ul>
+</div>

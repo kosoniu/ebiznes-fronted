@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="col">
+    <form [formGroup]="raceForm" class="d-flex justify-content-between">
+      <div class="mb-3">
+        <label for="race" class="form-label">Rasa</label>
+        <select id="race" class="form-control" formControlName="race">
+          <option *ngFor="let race of races; let i = index" [ngValue]="race.name" [selected]="i === 0">{{race.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="subrace" class="form-label">Podrasa</label>
+        <select id="subrace" class="form-control" formControlName="subrace">
+          <option *ngFor="let subrace of chosenRace.subraces; let i = index" [ngValue]="subrace.name" [selected]="i === 0">{{subrace.name}}</option>
+        </select>
+      </div>
+    </form>
+  </div>
+    <app-calculator-item
+      *ngFor="let attribute of attributes | keyvalue; let i = index"
+      [name]="attribute.value"
+      [attributeValue]="8"
+      [cost]="0"
+      [summaryAttributeValue]="8"
+      [racialBonus]="getRacialModifierForAttribute(attribute.key)"
+      [modifier]="-1"
+      [resetEvent]="resetEventSubject.asObservable()"
+      [headers]="headers"
+      [addHeader]="i === 0"
+      (stateChanged)="onAttributeChange($event)"
+    ></app-calculator-item>
+  <div class="d-flex justify-content-between pt-5">
+    <div>
+      <button (click)="emitResetEvent()" class="btn btn-dark">RESET</button>
+    </div>
+    <div>
+      <h3>Suma punktów: {{totalCost}}/27</h3>
+    </div>
+  </div>
+</div>
