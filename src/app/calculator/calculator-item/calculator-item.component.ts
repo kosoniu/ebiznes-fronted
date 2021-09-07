@@ -44,8 +44,6 @@ export class CalculatorItemComponent implements OnInit, OnDestroy, OnChanges {
     "charisma": "Charyzma"
   }
 
-  constructor() {}
-
   ngOnInit(): void {
     this.calculatorFormGroup = new FormGroup({
       attributeValue: new FormControl(this.attributeValue, [Validators.required])

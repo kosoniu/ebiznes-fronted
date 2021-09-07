@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Race} from "./race.model";
 import {Observable} from "rxjs";
 import {RaceWithFeatures} from "./race-with-features.model";
 

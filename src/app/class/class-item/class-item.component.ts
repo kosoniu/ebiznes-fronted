@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Proficiency} from "../../proficiency/proficency.model";
 import {ClassService} from "../class.service";
-import {ActivatedRoute} from "@angular/router";
 import {SocialAuthService} from "angularx-social-login";
 
 @Component({

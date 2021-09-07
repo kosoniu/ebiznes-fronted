@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Origin} from "./origin.model";
 import {OriginService} from "./origin.service";
 import {OriginWithProficiencies} from "./origin-with-proficiencies.model";
 

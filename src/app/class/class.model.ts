@@ -1,4 +1,3 @@
-import {Proficiency} from "../proficiency/proficency.model";
 
 export class Class {
   id: number;

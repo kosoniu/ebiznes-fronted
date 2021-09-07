@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
-import {Origin} from "./origin.model";
 import {OriginWithProficiencies} from "./origin-with-proficiencies.model";
 
 @Injectable({providedIn: 'root'})

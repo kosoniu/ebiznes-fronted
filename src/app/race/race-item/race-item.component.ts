@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RaceService} from "../race.service";
 import {RaceFeature} from "../race-feature.model";
-import {ActivatedRoute} from "@angular/router";
 import {SocialAuthService} from "angularx-social-login";
 
 @Component({

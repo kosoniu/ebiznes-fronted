@@ -10,7 +10,6 @@ import {RaceResolverService} from "./race/race-resolver.service";
 import {ClassComponent} from "./class/class.component";
 import {ClassResolverService} from "./class/class-resolver.service";
 import {CalculatorComponent} from "./calculator/calculator.component";
-import {AuthGuardService} from "./login/auth-guard-service";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/heroes', pathMatch: 'full' },

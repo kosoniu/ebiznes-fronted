@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeroService} from "./hero.service";
 import {Hero} from "./hero.model";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ClassWithProficiencies} from "../class/class-with-proficiencies.model";
 import {RaceWithFeatures} from "../race/race-with-features.model";
